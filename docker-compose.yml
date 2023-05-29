@@ -23,3 +23,13 @@ services:
       - 8001:80
     environment:
       - PMA_ARBITRARY=1
+
+  node:
+    container_name: node
+    image: node:lts
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    ports:
+      - 3000:3000
+    entrypoint: ['npm', 'run', 'dev'] # To start building

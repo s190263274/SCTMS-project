@@ -9,7 +9,7 @@ stop:
 	docker-compose stop
 up:
 	docker-compose up -d
-	cd laravel-SCTMS && npm run dev
+	docker compose run --rm node npm run dev
 
 composer-update:
 	docker exec laravel-docker bash -c "composer update"
